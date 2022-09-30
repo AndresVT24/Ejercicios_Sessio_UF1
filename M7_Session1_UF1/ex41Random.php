@@ -8,11 +8,13 @@
 </head>
 <body>
     <p>ENDEVINA EL NOMBRE: </p>
-
     <?php
         session_start();
-        $_SESSION["ocult"]= rand(1,100);
-        if(isset($_SESSION['ocult']))
+        
+        if(!isset($_SESSION['ocult'])){
+            $_SESSION["ocult"]= rand(1,100);
+        }
+        echo $_SESSION['ocult'];
         if(!isset($_GET['endevina'])){
             ?>
                 <form action="">
